@@ -19,8 +19,8 @@
  *
  * To use UINibWrapper you must:
  *   1. In your parent nib file you must add a blank UIView and change the class type to UINibWrapper.
- *   2. In the "User Defined Runtime Attributes" tab, add an entry for the keyPath "nibName" of type String with the name of your view class.
- *   3. The nib file of your nested view needs to have the same name as the view class name.
+ *   2. In the "User Defined Runtime Attributes" tab, add an entry for the keyPath "nibName" of type String with the name of your view nib file.
+ *   3. If you, optionally, have created a subview class, your subclass name must have the same name as your nested nib file name.
  *
  * And voilà, you are nesting nib files inside other nib files! Then, you can use the method "-contentView" to retrieve the nested view instance.
  *
