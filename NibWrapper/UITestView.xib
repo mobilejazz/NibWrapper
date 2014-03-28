@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="UITestView">
+            <rect key="frame" x="0.0" y="0.0" width="270" height="143"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sbq-Fj-oZi">
+                    <rect key="frame" x="111" y="56" width="51" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </switch>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nib 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZV-Fu-7Xo">
+                    <rect key="frame" x="48" y="27" width="175" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="DZV-Fu-7Xo" firstAttribute="centerX" secondItem="Sbq-Fj-oZi" secondAttribute="centerX" id="FBe-EA-X4X"/>
+                <constraint firstAttribute="centerY" secondItem="Sbq-Fj-oZi" secondAttribute="centerY" id="FIr-Zg-hiw"/>
+                <constraint firstItem="DZV-Fu-7Xo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="48" id="Nh5-8I-jVl"/>
+                <constraint firstAttribute="centerX" secondItem="Sbq-Fj-oZi" secondAttribute="centerX" id="lfV-Ik-z3g"/>
+                <constraint firstItem="Sbq-Fj-oZi" firstAttribute="top" secondItem="DZV-Fu-7Xo" secondAttribute="bottom" constant="8" symbolic="YES" id="x67-KQ-R0y"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+</document>
