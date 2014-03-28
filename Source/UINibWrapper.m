@@ -29,12 +29,12 @@
     
     self.backgroundColor = [UIColor clearColor];
     
-    Class viewClass = NSClassFromString(_className);
+    Class viewClass = NSClassFromString(_nibName);
     
     if (!viewClass)
         viewClass = UIView.class;
     
-    UIView *view = [viewClass nwp_instanceFromNibName:_className];
+    UIView *view = [viewClass nwp_instanceFromNibName:_nibName];
     
     if (view)
     {

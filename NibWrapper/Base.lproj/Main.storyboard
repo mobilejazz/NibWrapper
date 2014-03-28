@@ -24,7 +24,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="className" value="UITestView"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="nibName" value="UITestView"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" id="NES-5k-RnU" customClass="UINibWrapper">
@@ -32,7 +32,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="className" value="UITest2View"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="nibName" value="UITest2View"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
