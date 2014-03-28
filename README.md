@@ -7,8 +7,8 @@ Nesting NIBs ni other NIBs has never been that easy.
 
 ## 1. Nested Nib
 
-1. Create a UIView subclass with a xib file with the same name as the class.
-2. Customize the xib file and the class as you want.
+1. Create a xib file and customize it as you want.
+2. Optionally, create a subclass of UIView (the class name must be the same as the xib file).
 
 ![](https://raw.githubusercontent.com/mobilejazz/NibWrapper/master/README-images/Nib2.png)
 ![](https://raw.githubusercontent.com/mobilejazz/NibWrapper/master/README-images/Nib2-conf.png)
