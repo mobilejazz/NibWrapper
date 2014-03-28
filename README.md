@@ -18,7 +18,7 @@ Nesting NIBs ni other NIBs has never been that easy.
 
 1. In your parent nib, add a UIView and setup at as a `UINibWrapper` class. 
 
-2. In the "User Defined Runtime Attributes" add an entry for the key *className* of type string and add the name of your custom view.
+2. In the "User Defined Runtime Attributes" add an entry for the key *nibName* of type string and add the name of your custom view.
 
 ![](https://raw.githubusercontent.com/mobilejazz/NibWrapper/master/README-images/Nib1.png)
 ![](https://raw.githubusercontent.com/mobilejazz/NibWrapper/master/README-images/Nib1-conf.png)
