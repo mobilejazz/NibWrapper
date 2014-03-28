@@ -19,6 +19,7 @@
 		D209D8CA18E4A8AD00A8FCDC /* UITestView.m in Sources */ = {isa = PBXBuildFile; fileRef = D209D8C718E4A8AD00A8FCDC /* UITestView.m */; };
 		D209D8CB18E4A8AD00A8FCDC /* UITestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D209D8C818E4A8AD00A8FCDC /* UITestView.xib */; };
 		D234809418E58698005EDA5D /* UINibWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = D234809318E58698005EDA5D /* UINibWrapper.m */; };
+		D234809618E58A70005EDA5D /* UITest2View.xib in Resources */ = {isa = PBXBuildFile; fileRef = D234809518E58A70005EDA5D /* UITest2View.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		D209D8C818E4A8AD00A8FCDC /* UITestView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UITestView.xib; sourceTree = "<group>"; };
 		D234809218E58698005EDA5D /* UINibWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UINibWrapper.h; path = Source/UINibWrapper.h; sourceTree = SOURCE_ROOT; };
 		D234809318E58698005EDA5D /* UINibWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UINibWrapper.m; path = Source/UINibWrapper.m; sourceTree = SOURCE_ROOT; };
+		D234809518E58A70005EDA5D /* UITest2View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UITest2View.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				D209D8C618E4A8AD00A8FCDC /* UITestView.h */,
 				D209D8C718E4A8AD00A8FCDC /* UITestView.m */,
 				D209D8C818E4A8AD00A8FCDC /* UITestView.xib */,
+				D234809518E58A70005EDA5D /* UITest2View.xib */,
 				D209D8A718E4A85C00A8FCDC /* Images.xcassets */,
 				D209D89618E4A85C00A8FCDC /* Supporting Files */,
 			);
@@ -171,6 +174,7 @@
 			files = (
 				D209D8CB18E4A8AD00A8FCDC /* UITestView.xib in Resources */,
 				D209D8A818E4A85C00A8FCDC /* Images.xcassets in Resources */,
+				D234809618E58A70005EDA5D /* UITest2View.xib in Resources */,
 				D209D89A18E4A85C00A8FCDC /* InfoPlist.strings in Resources */,
 				D209D8A318E4A85C00A8FCDC /* Main.storyboard in Resources */,
 			);

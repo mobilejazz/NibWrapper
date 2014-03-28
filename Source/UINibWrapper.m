@@ -16,7 +16,7 @@
 /**
  * Attempts to create a new instance of the current view from a NIB with named with the class name.
  **/
-+ (instancetype)nwp_instance;
++ (instancetype)nwp_instanceFromNibName:(NSString*)nibName;
 
 @end
 
@@ -31,7 +31,10 @@
     
     Class viewClass = NSClassFromString(_className);
     
-    UIView *view = [viewClass nwp_instance];
+    if (!viewClass)
+        viewClass = UIView.class;
+    
+    UIView *view = [viewClass nwp_instanceFromNibName:_className];
     
     if (view)
     {
@@ -55,16 +58,16 @@
 #pragma mark -
 @implementation UIView (UINibWrapper)
 
-+ (instancetype)nwp_instance
++ (instancetype)nwp_instanceFromNibName:(NSString*)nibName
 {
     NSString *className = NSStringFromClass(self);
     
-    UINib *nib = [UINib nibWithNibName:className bundle:nil];
+    UINib *nib = [UINib nibWithNibName:nibName bundle:nil];
     
     if (!nib)
     {
         NSException *exception = [NSException exceptionWithName:NSInvalidArgumentException
-                                                         reason:[NSString stringWithFormat:@"NibWrapper could not find nib file %@", className]
+                                                         reason:[NSString stringWithFormat:@"NibWrapper could not find nib file %@", nibName]
                                                        userInfo:nil];
         [exception raise];
     }
@@ -81,5 +84,6 @@
     
     return array.lastObject;
 }
+
 
 @end
