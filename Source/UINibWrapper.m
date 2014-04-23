@@ -60,6 +60,23 @@
     return self.subviews.firstObject;
 }
 
+#pragma mark - Proxying
+
+- (id)forwardingTargetForSelector:(SEL)aSelector{
+  if([self.contentView respondsToSelector:aSelector]){
+    return self.contentView;
+  }
+  return nil;
+}
+
+- (id)valueForUndefinedKey:(NSString *)key{
+  return [self.contentView valueForKey:key];
+}
+
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key{
+  [self.contentView setValue:value forKey:key];
+}
+
 @end
 
 #pragma mark -
