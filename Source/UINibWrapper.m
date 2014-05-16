@@ -60,6 +60,14 @@
     return self.subviews.firstObject;
 }
 
+- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event
+{
+    if ([self.contentView isUserInteractionEnabled])
+        return [self.contentView pointInside:point withEvent:event];
+    else
+        return NO;
+}
+
 @end
 
 #pragma mark -
