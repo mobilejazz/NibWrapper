@@ -1,7 +1,7 @@
 NibWrapper
 ==========
 
-Nesting NIBs in other NIBs has never been that easy.
+Nesting NIBs in other NIBs has never been this easy.
 
 # How To
 
