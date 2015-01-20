@@ -51,7 +51,7 @@
         
         [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[view]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(view)]];
         [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[view]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(view)]];
-        [self layoutIfNeeded];
+        [self setNeedsLayout];
     }
 }
 
@@ -85,6 +85,14 @@
     [text drawAtPoint:drawingPoint withAttributes:attributes];
 }
 #endif
+
+- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event
+{
+    if ([self.contentView isUserInteractionEnabled])
+        return [self.contentView pointInside:point withEvent:event];
+    else
+        return NO;
+}
 
 @end
 
