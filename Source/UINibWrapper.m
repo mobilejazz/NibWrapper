@@ -60,6 +60,32 @@
     return self.subviews.firstObject;
 }
 
+#if TARGET_INTERFACE_BUILDER
+- (void)drawRect:(CGRect)rect
+{
+    UIColor *textColor = [UIColor colorWithWhite:0.1 alpha:1.0];
+    UIColor *backgroundColor = [[UIColor blueColor] colorWithAlphaComponent:0.2];
+    NSString *text = [NSString stringWithFormat:@"%@", _nibName];
+
+    UIBezierPath *path = [UIBezierPath bezierPathWithRect:self.bounds];
+    [backgroundColor setFill];
+    [path fill];
+    
+    CGPoint center = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds));
+    
+    NSDictionary *attributes = @{NSFontAttributeName:[UIFont preferredFontForTextStyle:UIFontTextStyleHeadline],
+                                 NSForegroundColorAttributeName: textColor};
+    
+    CGRect bounds = [text boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)
+                                        options:NSStringDrawingUsesLineFragmentOrigin
+                                     attributes:attributes
+                                        context:nil];
+    
+    CGPoint drawingPoint = CGPointMake(floorf(center.x - bounds.size.width/2.0), floorf(center.y - bounds.size.height/2.0));
+    [text drawAtPoint:drawingPoint withAttributes:attributes];
+}
+#endif
+
 @end
 
 #pragma mark -
