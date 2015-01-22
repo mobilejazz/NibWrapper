@@ -47,13 +47,6 @@
     return self;
 }
 
-- (void)dealloc
-{
-    if (self.cacheAccessSemaphore != NULL) {
-        dispatch_release(self.cacheAccessSemaphore);
-    }
-}
-
 - (UINib *)nibWithName:(NSString *)name
 {
     dispatch_semaphore_wait(self.cacheAccessSemaphore, DISPATCH_TIME_FOREVER);
