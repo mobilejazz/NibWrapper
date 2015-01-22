@@ -26,13 +26,14 @@
  *
  * @discussion By using UINibWrapper, you are adding an extra UIView in your nested views (the UINibWrapper itself).
  **/
+IB_DESIGNABLE
 @interface UINibWrapper : UIView
 
 /**
  * The name of the class of the nested view (same as the name of the nib file).
  * @discussion You must assing this property in the "User Defined Runtime Attributes" in Interface Builder.
  **/
-@property (nonatomic, strong) NSString *nibName;
+@property (nonatomic, strong) IBInspectable NSString *nibName;
 
 /**
  * Returns the instance of the nested view.
