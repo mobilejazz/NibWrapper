@@ -14,6 +14,61 @@
 
 #import "UINibWrapper.h"
 
+@interface NibFileCacher : NSObject
+
++ (NibFileCacher *)sharedInstance;
+- (UINib *)nibWithName:(NSString *)name;
+
+@property (nonatomic) dispatch_semaphore_t cacheAccessSemaphore;
+@property (nonatomic, strong) NSMutableDictionary *cachedNib;
+
+@end
+
+@implementation NibFileCacher
+
++ (instancetype)sharedInstance
+{
+    static dispatch_once_t once;
+    static id instance = nil;
+    dispatch_once(&once, ^{
+        instance = [[self alloc] init];
+    });
+    return instance;
+}
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.cachedNib = [[NSMutableDictionary alloc] init];
+        self.cacheAccessSemaphore = NULL;
+        self.cacheAccessSemaphore = dispatch_semaphore_create(1);
+    }
+    return self;
+}
+
+- (void)dealloc
+{
+    if (self.cacheAccessSemaphore != NULL) {
+        dispatch_release(self.cacheAccessSemaphore);
+    }
+}
+
+- (UINib *)nibWithName:(NSString *)name
+{
+    dispatch_semaphore_wait(self.cacheAccessSemaphore, DISPATCH_TIME_FOREVER);
+    UINib *nib = nil;
+    nib = self.cachedNib[name];
+    if (!nib) {
+        nib = [UINib nibWithNibName:name bundle:nil];
+        self.cachedNib[name] = nib;
+    }
+    dispatch_semaphore_signal(self.cacheAccessSemaphore);
+    return nib;
+}
+
+@end
+
 #pragma mark - 
 /**
  * Private category on UIView to be used by the UINibWrapper.
@@ -51,7 +106,7 @@
         
         [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[view]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(view)]];
         [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[view]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(view)]];
-        [self setNeedsLayout];
+        [self layoutIfNeeded];
     }
 }
 
@@ -77,7 +132,7 @@
 {
     NSString *className = NSStringFromClass(self);
     
-    UINib *nib = [UINib nibWithNibName:nibName bundle:nil];
+    UINib *nib = [[NibFileCacher sharedInstance] nibWithName:nibName];
     
     if (!nib)
     {
