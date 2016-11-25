@@ -1,3 +1,5 @@
+![NibWrapper](https://raw.githubusercontent.com/mobilejazz/metadata/master/images/banners/mobile-jazz-nib-wrapper-ios.jpg)
+
 NibWrapper
 ==========
 
